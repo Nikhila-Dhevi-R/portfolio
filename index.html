@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NikhilA's Portfolio</title>
+    <link rel="icon" href="imgs\pfp-pf.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about_me.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(rgb(118, 168, 236), white, rgb(103, 150, 215));
+            min-height: 100vh;
+        }
+
+        .hr {
+            border-width: 100%;
+            border: 1px solid rgb(22, 51, 91);
+            background-color: rgb(22, 51, 91);
+            color: aliceblue;
+            font-family: cursive;
+        }
+
+        section {
+            margin-top: 0;
+        }
+
+        .nav span {
+            margin-left: 25px;
+            cursor: pointer;
+            color: azure;
+            text-decoration: underline;
+        }
+
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .h1 {
+            font-family: monospace;
+            font-size: 50px;
+        }
+
+        .p {
+            color: #454444;
+            font-size: 20px;
+        }
+
+        .im {
+            width: 500px;
+            height: auto;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding-left: 100px;
+            position: relative;
+            top: -80px;
+            margin-right: -150px;
+        }
+
+        /* Hobbies Section Styles */
+        .hobbies-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(22, 51, 91, 0.1), rgba(118, 168, 236, 0.2));
+            margin-top: 40px;
+        }
+
+        .hobbies-title {
+            text-align: center;
+            font-family: monospace;
+            font-size: 36px;
+            color: rgb(22, 51, 91);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .hobbies-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(22, 51, 91), rgb(118, 168, 236));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .hobbies-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hobby-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 280px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(22, 51, 91, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(22, 51, 91, 0.25);
+        }
+
+        .hobby-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgb(22, 51, 91);
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 8px 20px rgba(22, 51, 91, 0.3);
+        }
+
+        .hobby-card:nth-child(1) .hobby-image {
+            animation-delay: 0s;
+        }
+
+        .hobby-card:nth-child(2) .hobby-image {
+            animation-delay: 1s;
+        }
+
+        .hobby-card:nth-child(3) .hobby-image {
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .hobby-title {
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 22px;
+            color: rgb(22, 51, 91);
+            font-weight: bold;
+        }
+
+        .hobby-description {
+            margin-top: 12px;
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 60px 40px;
+            background: rgb(22, 51, 91);
+            margin-top: 40px;
+        }
+
+        .contact-title {
+            text-align: center;
+            font-family: monospace;
+            font-size: 36px;
+            color: aliceblue;
+            margin-bottom: 40px;
+        }
+
+        .contact-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(118, 168, 236), aliceblue);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 40px;
+            border-radius: 15px;
+            min-width: 200px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgb(118, 168, 236);
+            transform: scale(1.05);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact-label {
+            font-family: monospace;
+            font-size: 16px;
+            color: rgb(181, 209, 233);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            color: aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+
+        .contact-info:hover {
+            color: rgb(118, 168, 236);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgb(15, 35, 60);
+            color: rgb(181, 209, 233);
+            font-family: monospace;
+        }
+
+        /* Navigation improvements with flexbox */
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            border-width: 100%;
+            border: 1px solid rgb(22, 51, 91);
+            background-color: rgb(22, 51, 91);
+            color: aliceblue;
+            font-family: cursive;
+            padding: 10px 30px;
+            margin: 0;
+            margin-bottom: 0;
+        }
+
+        .nav a {
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="hr">
+        <h2>&ensp;&ensp; WELCOME TO MY PORTFOLIO !</h2>
+    </header>
+    <nav class="nav">
+        <a href="#home"><span>Home</span></a>
+        <a href="#about"><span>About me</span></a>
+        <a href="#hobbies"><span>Hobbies</span></a>
+        <a href="#contact"><span>Contact me</span></a>
+    </nav>
+    <section id="home">
+        <article class="intro">
+            <div class="text">
+                <h1 class="h1">HELLO ! I'M NIKHILA </h1><br><br><br>
+                <p class="p">A 19yr old, dedicated and smartworking cool student,<br>pursuing a B.Tech degree at Vellore
+                    Institute of Technology, Vellore. </p>
+            </div>
+            <img class="im" align="right" src="imgs\intro_pic.png" height="500" width="400" alt="Nikhila">
+        </article>
+    </section>
+
+    <section id="about">
+        <h1 class="fline">ABOUT ME</h1>
+
+        <article class="abt">
+            <h3>I am Nikhila Dhevi R, 19yr old student
+                currently pursuing a B.Tech degree at Vellore Institute of
+                Technology, Vellore. <br>I was born and brought up in Kanyakumari,TamilNadu.<br>
+                <br>I like to travel to many places, enjoy eating different kinds of foods and different cultures.<br>
+                I am fluent in Tamil,English and I have a strong passion for artificial
+                intelligence and its applications in space, technology, and real
+                world scenarios.<br> My commitment to learning and advancing my
+                knowledge in this field drives me to excel in my studies and explore
+                innovative solutions.
+            </h3>
+        </article>
+        <figure class="abtfig">
+            <img align="left" src="imgs\about0.jpeg" height="400" width="300" alt="about">
+
+        </figure>
+
+        <div class="boxes-container">
+            <aside class="edu">
+                <h2 class="eb"><b>EDUCATION</b></h2>
+                <ul>
+                    <li>
+                        <p style="color: rgb(181, 209, 233);">2010-2016</p><br>
+                        <h3>St.Alphonsa Matriculation Higher Secondary School</h3><br>
+                        <p style="color: rgb(181, 209, 233);">Primary Education</p> <br>
+                        <p style="color: rgb(181, 209, 233);">GPA: 9.8</p>
+                    </li><br><br>
+
+                    <li>
+                        <p style="color: rgb(181, 209, 233);">2017-2023</p><br>
+                        <h3>Amrita Vidhyalayam School,Kanyakumari </h3><br>
+                        <p style="color: rgb(181, 209, 233);">Higer Sceondary Education</p><br>
+                        <p style="color: rgb(181, 209, 233);">GPA: 9.2</p><br>
+                    </li>
+                </ul>
+            </aside>
+
+            <article class="intr">
+                <h3>PROJECTS & INTERNSHIPS</h3>
+                <ol type="i">
+                    <li>
+                        <p>June 2025 - July 2025 <br>
+                            <b>IPSR Solutions ltd.</b>
+                        </p>
+                        <h3> Project built: </h3>
+                        <p>Developed a Retrieval-Augmented Generation (RAG) based Chatbot</p>
+                    </li>
+
+                    <li>
+                        <p>June 2025 - July 2025 <br>
+                            <b>IBM Skillsbuild</b>
+                        </p>
+                        <h3>Project built: </h3>
+                        <p>Employee salary prediction system using Machine Learning Algorithms</p>
+                    </li>
+                </ol>
+            </article>
+
+            <!-- Skills Box -->
+            <aside class="skills">
+                <h2 class="skills-title"><b>MY SKILLS</b></h2>
+                <div class="skills-container">
+                    <span class="skill-tag">⏰ Punctuality</span>
+                    <span class="skill-tag">💬 Communication</span>
+                    <span class="skill-tag">💻 C</span>
+                    <span class="skill-tag">💻 C++</span>
+                    <span class="skill-tag">☕ Java</span>
+                    <span class="skill-tag">🐍 Python</span>
+                    <span class="skill-tag">🌐 Frontend</span>
+                    <span class="skill-tag">💃 Dancing</span>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="hobbies" class="hobbies-section">
+        <h1 class="hobbies-title">MY HOBBIES</h1>
+        <div class="hobbies-container">
+            <div class="hobby-card">
+                <img src="imgs/music.jpeg" alt="Music" class="hobby-image">
+                <h3 class="hobby-title">🎵 Music</h3>
+                <p class="hobby-description">Melodies soothe my soul and inspire creativity in everything I do.</p>
+            </div>
+            <div class="hobby-card">
+                <img src="imgs/scrolling.jpg" alt="Scrolling" class="hobby-image">
+                <h3 class="hobby-title">📱 Scrolling</h3>
+                <p class="hobby-description">Exploring digital content keeps me updated with tech trends and ideas.</p>
+            </div>
+            <div class="hobby-card">
+                <img src="imgs/watering.jpg" alt="Watering Plants" class="hobby-image">
+                <h3 class="hobby-title">🌱 Watering Plants</h3>
+                <p class="hobby-description">Nurturing plants brings peace and connects me with nature's beauty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h1 class="contact-title">CONTACT ME</h1>
+        <div class="contact-container">
+            <div class="contact-card">
+                <span class="contact-icon">📧</span>
+                <span class="contact-label">Email</span>
+                <a href="mailto:nikhiladhevir@gmail.com" class="contact-info">mailto:nikhiladhevir@gmail.com</a>
+            </div>
+            <div class="contact-card">
+                <span class="contact-icon">📞</span>
+                <span class="contact-label">Phone</span>
+                <a href="tel:+919876543210" class="contact-info">+91 98765 43210</a>
+            </div>
+            <div class="contact-card">
+                <span class="contact-icon">📍</span>
+                <span class="contact-label">Location</span>
+                <span class="contact-info">Vellore, Tamil Nadu, India</span>
+            </div>
+            <div class="contact-card">
+                <span class="contact-icon">💼</span>
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/nikhila-dhevi-r/" target="_blank"
+                    class="contact-info">linkedin.com/in/nikhila-dhevi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Nikhila Dhevi R. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
